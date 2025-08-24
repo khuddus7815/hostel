@@ -19,13 +19,13 @@ const decodeUser = async (token) => {
       const query = `
         SELECT student_id, room, block_id
         FROM student 
-        WHERE student_id = $1
+        WHERE student_id = ?
       `;
 
-      const result = await db.pool.query(query, [user_id]);
-      console.log(result.rows);
-      if (result.rows.length > 0) {
-        userInfo = result.rows[0];
+      const [result] = await db.pool.query(query, [user_id]);
+      console.log(result);
+      if (result.length > 0) {
+        userInfo = result[0];
       }
     }
 
@@ -33,13 +33,13 @@ const decodeUser = async (token) => {
       const query = `
         SELECT warden_id,  block_id
         FROM warden 
-        WHERE warden_id = $1
+        WHERE warden_id = ?
       `;
 
-      const result = await db.pool.query(query, [user_id]);
+      const [result] = await db.pool.query(query, [user_id]);
 
-      if (result.rows.length > 0) {
-        userInfo = result.rows[0];
+      if (result.length > 0) {
+        userInfo = result[0];
       }
     }
 
@@ -64,19 +64,19 @@ exports.postComplaints = async (req, res) => {
             student_id, 
             description, room, is_completed, created_at,
             assigned_at) 
-            values ($1,$2,$3,$4,$5,$6,$7,$8) returning *`;
+            values (?,?,?,?,?,?,?,?)`;
 
-    const newComplaint = await db.pool.query(query, [
+    const [newComplaint] = await db.pool.query(query, [
       name,
       block_id,
       student_id,
       description,
       room,
       false,
-      new Date().toISOString(),
+      new Date().toISOString().slice(0, 19).replace('T', ' '),
       null,
     ]);
-    res.json(newComplaint.rows[0]);
+    res.json(newComplaint);
   } catch (err) {
     console.log(err.message);
   }
@@ -92,11 +92,11 @@ exports.putComplaintsByid = async (req, res) => {
     const { id } = req.params;
 
     if (type === "warden") {
-      const result = await db.pool.query(
-        "UPDATE complaint SET is_completed = NOT is_completed, assigned_at = CURRENT_TIMESTAMP WHERE id = $1 RETURNING *",
+      const [result] = await db.pool.query(
+        "UPDATE complaint SET is_completed = NOT is_completed, assigned_at = CURRENT_TIMESTAMP WHERE id = ?",
         [id]
       );
-      res.json(result.rows[0]);
+      res.json(result);
     } else {
       res.status(404).json({ error: "Complaint not found" });
     }
@@ -116,16 +116,16 @@ exports.getAllComplaintsByUser = async (req, res) => {
 
   try {
     if (type === "warden") {
-      const allComplaints = await db.pool.query(
+      const [allComplaints] = await db.pool.query(
         "SELECT * FROM complaint ORDER BY created_at DESC"
       );
-      res.json(allComplaints.rows);
+      res.json(allComplaints);
     } else if (type === "student") {
-      const myComplaints = await db.pool.query(
-        "SELECT * FROM complaint WHERE student_id = $1 ORDER BY created_at DESC",
+      const [myComplaints] = await db.pool.query(
+        "SELECT * FROM complaint WHERE student_id = ? ORDER BY created_at DESC",
         [user_id]
       );
-      res.json(myComplaints.rows);
+      res.json(myComplaints);
     } else {
       res.status(403).json({ error: "Unauthorized" });
     }
@@ -165,22 +165,22 @@ exports.getUserDetails = async (req, res) => {
     console.log("User ID:", user_id);
 
     if (type == "student") {
-      const studentDetails = await db.pool.query(
+      const [studentDetails] = await db.pool.query(
         `SELECT u.full_name, u.email, u.phone, s.usn, b.block_id, b.block_name, s.room
       FROM users u, student s, block b
-      WHERE u.user_id = $1 AND u.user_id = s.student_id AND s.block_id = b.block_id`,
+      WHERE u.user_id = ? AND u.user_id = s.student_id AND s.block_id = b.block_id`,
         [user_id]
       );
-      res.json(studentDetails.rows);
+      res.json(studentDetails);
     }
     if (type == "warden") {
-      const wardenDetails = await db.pool.query(
+      const [wardenDetails] = await db.pool.query(
         `select u.full_name,u.email,u.phone
                                                   from users u 
-                                                  where user_id=$1 `,
+                                                  where user_id=?`,
         [user_id]
       );
-      res.json(wardenDetails.rows);
+      res.json(wardenDetails);
     }
   } catch (err) {
     console.error(err.message);
@@ -198,8 +198,8 @@ exports.deleteComplaints = async (req, res) => {
     const { id } = req.params;
 
     if (type == "warden") {
-      const deleteComplaint = await db.pool.query(
-        `delete from complaint where id = $1`,
+      const [deleteComplaint] = await db.pool.query(
+        `delete from complaint where id = ?`,
         [id]
       );
       res.json("complaint deleted");

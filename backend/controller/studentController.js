@@ -8,11 +8,11 @@ app.use(express.json());
 exports.getStudentByid = async(req, res)=> {
     try {
         const {student_id} = req.params;
-        const student = await db.pool.query(
-          "select * from student where student_id = $1",
+        const [student] = await db.pool.query(
+          "select * from student where student_id = ?",
           [student_id]
         );
-        res.json(student.rows)
+        res.json(student)
       } catch (err) {
         console.log(err.message);
       }
