@@ -5,7 +5,7 @@ import { RoutesPathName } from "./constants";
 import PrivateRoute from "./utils/PrivateRoute";
 import AccountPage from "./pages/AccountPage";
 
-const routes = createBrowserRouter([
+const routes = createHashRouter([
   {
     path: RoutesPathName.SIGNUP_PAGE,
     element: <Register />,
