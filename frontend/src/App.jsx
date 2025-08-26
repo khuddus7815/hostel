@@ -1,6 +1,6 @@
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { RoutesPathName } from "./constants";
 import PrivateRoute from "./utils/PrivateRoute";
 import AccountPage from "./pages/AccountPage";
