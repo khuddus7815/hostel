@@ -8,8 +8,7 @@ import AccountPage from "./pages/AccountPage";
 const routes = createBrowserRouter([
   {
     path: RoutesPathName.SIGNUP_PAGE,
-    index: true,
-    Component: Register,
+    element: <Register />,
   },
   {
     path: RoutesPathName.LOGIN_PAGE,
