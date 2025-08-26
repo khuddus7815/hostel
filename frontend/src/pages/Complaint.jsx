@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../utils/Auth";
+import { useNavigate } from "react-router-dom";
 
 const formatTimestamp = (timestamp) => {
   const date = new Date(timestamp);
@@ -26,6 +27,7 @@ const formatTimestamp1 = (timestamp) => {
 
 const ComplaintForm = () => {
   const { authToken, headers } = useAuth();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [room, setRoom] = useState("");
@@ -53,7 +55,7 @@ const ComplaintForm = () => {
         headers: headers,
         body: JSON.stringify(body),
       });
-      window.location = "/";
+      navigate("/");
     } catch (err) {
       console.error(err.message);
     }
