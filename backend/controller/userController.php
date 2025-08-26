@@ -11,7 +11,6 @@ function userRegister($conn, $data) {
     $password = $data['password'];
     $type = $data['type'];
 
-    // Check if user already exists
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
