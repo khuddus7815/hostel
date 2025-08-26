@@ -3,11 +3,11 @@
 
 header("Content-Type: application/json");
 
-$servername = "sdb-87.hosting.stackcp.net";
-$username = "tranetra";
+$servername = "mysql.gb.stackcp.com";
+$username = "tranetra-35313133cb7c";
 $password = "y*rIWWOqA9!T";
 $dbname = "tranetra-35313133cb7c";
-$port = 41353;
+$port = 41146;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
