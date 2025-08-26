@@ -20,7 +20,7 @@ const routes = createHashRouter([
   },
   {
     path: RoutesPathName.DASHBOARD_PAGE,
-    element: <PrivateRoute />,
+    element: <Login />,
   },
   {
     path: '*',
