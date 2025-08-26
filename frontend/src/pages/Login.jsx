@@ -132,7 +132,7 @@ function Login() {
                     id="email"
                     name="email-username"
                     placeholder="Enter your email"
-                    autoFocus=""
+                    autoFocus
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
