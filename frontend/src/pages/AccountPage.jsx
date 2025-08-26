@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
 import { useAuth } from "../utils/Auth";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function AccountPage() {
   const { headers } = useAuth();
@@ -40,7 +41,7 @@ function AccountPage() {
   const getuserDetails = async (user_id) => {
     try {
       const response = await fetch(
-        `[https://test.tranetra.com/api/index.php?endpoint=userDetails&id=$](https://test.tranetra.com/api/index.php?endpoint=userDetails&id=$){user_id}`,
+        `https://test.tranetra.com/api/index.php?endpoint=userDetails`,
         {
           method: "GET",
           headers: headers,
@@ -48,13 +49,13 @@ function AccountPage() {
       );
       const data = await response.json();
       console.log(data);
-      setUserName(data[0].full_name);
-      setemail(data[0].email);
-      setphone(data[0].phone);
-      setUsn(data[0].usn);
-      setRoom(data[0].room);
-      setblockID(data[0].block_id);
-      setblockname(data[0].block_name);
+      setUserName(data.full_name || "");
+      setemail(data.email || "");
+      setphone(data.phone || "");
+      setUsn(data.usn || "");
+      setRoom(data.room || "");
+      setblockID(data.block_id || "");
+      setblockname(data.block_name || "");
     } catch (err) {
       console.error(err.message);
     }
