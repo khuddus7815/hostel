@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Complaint from "./Complaint";
 import WardenComplaints from "./WardenComplaint";
 import { GetAuthHeader } from "../testing/Headers";
-import { useEffect, useState } from "react";
 
 function Dashboard() {
   const [userType, setUserType] = useState(null);
