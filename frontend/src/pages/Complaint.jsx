@@ -61,26 +61,26 @@ const ComplaintForm = () => {
 
   return (
     <>
-      <section class="bg-gray-100 py-12 text-gray-800 sm:py-24 h-full">
-        <div class="bg-gray-100 mx-auto flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row">
-          <div class="max-w-2xl px-4 lg:pr-24">
-            <p class="mb-2 text-blue-600">Hostel Grievance Redressal</p>
-            <h3 class="mb-5 text-3xl font-semibold">Submit Your Grievance</h3>
-            <p class="mb-16 text-md text-gray-600">
+      <section className="bg-gray-100 py-12 text-gray-800 sm:py-24 h-full">
+        <div className="bg-gray-100 mx-auto flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row">
+          <div className="max-w-2xl px-4 lg:pr-24">
+            <p className="mb-2 text-blue-600">Hostel Grievance Redressal</p>
+            <h3 className="mb-5 text-3xl font-semibold">Submit Your Grievance</h3>
+            <p className="mb-16 text-md text-gray-600">
               Hostel Grievance Redressal ensures a swift and confidential
               resolution of student concerns. We guarantee a quick response to
               submitted complaints, fostering a secure and comfortable living
               environment for all hostel residents.
             </p>
-            <div class="mb-5 flex font-medium">
-              <div class="mr-4">
+            <div className="mb-5 flex font-medium">
+              <div className="mr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  class="h-7 w-7 text-blue-500"
+                  className="h-7 w-7 text-blue-500"
                 >
                   <path
                     strokeLinecap="round"
@@ -89,24 +89,24 @@ const ComplaintForm = () => {
                   />
                 </svg>
               </div>
-              <div class="">
-                <p class="mb-2">Swift Grievance Resolution</p>
-                <span class="font-normal text-gray-600">
+              <div className="">
+                <p className="mb-2">Swift Grievance Resolution</p>
+                <span className="font-normal text-gray-600">
                   Swift grievance resolution prioritizes timely and effective
                   solutions, ensuring students' concerns are promptly addressed
                   and resolved.
                 </span>
               </div>
             </div>
-            <div class="mb-5 flex font-medium">
-              <div class="mr-4">
+            <div className="mb-5 flex font-medium">
+              <div className="mr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  class="h-7 w-7 text-blue-500"
+                  className="h-7 w-7 text-blue-500"
                 >
                   <path
                     strokeLinecap="round"
@@ -115,24 +115,24 @@ const ComplaintForm = () => {
                   />
                 </svg>
               </div>
-              <div class="">
-                <p class="mb-2">Confidentiality Assured</p>
-                <span class="font-normal text-gray-600">
+              <div className="">
+                <p className="mb-2">Confidentiality Assured</p>
+                <span className="font-normal text-gray-600">
                   Your grievances are handled with utmost confidentiality,
                   ensuring privacy and trust throughout the hostel grievance
                   redressal process .
                 </span>
               </div>
             </div>
-            <div class="mb-5 flex font-medium">
-              <div class="mr-4">
+            <div className="mb-5 flex font-medium">
+              <div className="mr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  class="h-7 w-7 text-blue-500"
+                  className="h-7 w-7 text-blue-500"
                 >
                   <path
                     strokeLinecap="round"
@@ -141,9 +141,9 @@ const ComplaintForm = () => {
                   />
                 </svg>
               </div>
-              <div class="">
-                <p class="mb-2">Easy Communication</p>
-                <span class="font-normal text-gray-600">
+              <div className="">
+                <p className="mb-2">Easy Communication</p>
+                <span className="font-normal text-gray-600">
                   Effortless communication is facilitated, providing a smooth
                   and accessible channel for expressing and resolving grievances
                   within the hostel community.
@@ -151,43 +151,43 @@ const ComplaintForm = () => {
               </div>
             </div>
           </div>
-          <div class="border border-gray-100 shadow-gray-500/20 mt-8 mb-8 max-w-md bg-white shadow-sm sm:rounded-lg sm:shadow-lg lg:mt-0">
-            <div class="relative border-b border-gray-300 p-4 py-8 sm:px-8">
-              <h3 class="mb-1 inline-block text-3xl font-medium">
-                <span class="mr-4">Submit Complaint</span>
-                <span class="inline-block rounded-md bg-blue-100 px-2 py-1 text-sm text-blue-700 sm:inline">
+          <div className="border border-gray-100 shadow-gray-500/20 mt-8 mb-8 max-w-md bg-white shadow-sm sm:rounded-lg sm:shadow-lg lg:mt-0">
+            <div className="relative border-b border-gray-300 p-4 py-8 sm:px-8">
+              <h3 className="mb-1 inline-block text-3xl font-medium">
+                <span className="mr-4">Submit Complaint</span>
+                <span className="inline-block rounded-md bg-blue-100 px-2 py-1 text-sm text-blue-700 sm:inline">
                   Quick Response
                 </span>
               </h3>
-              <p class="text-gray-600">
+              <p className="text-gray-600">
                 Contact us for hostel grievance redressal
               </p>
             </div>
-            <div class="p-4 sm:p-8">
+            <div className="p-4 sm:p-8">
               <input
                 id="name"
                 type="text"
-                class="mt-1 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"
+                className="mt-1 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"
                 placeholder="Enter Complaint name"
                 onChange={(e) => setName(e.target.value)}
               />
               <input
                 id="email"
                 type="text"
-                class="peer mt-8 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"
+                className="peer mt-8 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"
                 placeholder="Enter your Room No."
                 onChange={(e) => setRoom(e.target.value)}
               />
-              <label class="mt-5 mb-2 inline-block max-w-full">
+              <label className="mt-5 mb-2 inline-block max-w-full">
                 Tell us about your grievance
               </label>
               <textarea
                 id="about"
-                class="mb-8 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"
+                className="mb-8 w-full resize-y overflow-auto rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:border-blue-500 focus:outline-none hover:border-blue-500"
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
               <button
-                class="w-full rounded-lg border border-blue-700 bg-blue-700 p-3 text-center font-medium text-white outline-none transition focus:ring hover:border-blue-700 hover:bg-blue-600 hover:text-white"
+                className="w-full rounded-lg border border-blue-700 bg-blue-700 p-3 text-center font-medium text-white outline-none transition focus:ring hover:border-blue-700 hover:bg-blue-600 hover:text-white"
                 onClick={onSubmitForm}
               >
                 Submit
