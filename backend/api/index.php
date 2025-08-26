@@ -1,10 +1,10 @@
 <?php
 // API index.php
 
-require_once '../db.php';
-require_once '../utils/utils.php';
-require_once '../controller/userController.php';
-require_once '../controller/complaintController.php';
+require_once __DIR__ . '/../db.php';
+require_once __DIR__ . '/../utils/utils.php';
+require_once __DIR__ . '/../controller/userController.php';
+require_once __DIR__ . '/../controller/complaintController.php';
 
 // Set headers for CORS and JSON
 header("Content-Type: application/json");

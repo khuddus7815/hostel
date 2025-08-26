@@ -1,8 +1,8 @@
 <?php
 // complaintController.php
 
-require_once '../db.php';
-require_once '../utils/utils.php';
+require_once __DIR__ . '/../db.php';
+require_once __DIR__ . '/../utils/utils.php';
 
 function decodeUser($conn, $token) {
     if (empty($token)) {
