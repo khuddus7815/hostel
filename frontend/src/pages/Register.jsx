@@ -40,7 +40,7 @@ function Register() {
       }
       const response = await fetch("/api/register", {
         method: "POST",
-        headers: { "content-type": "application/json " },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
       console.log(response);
@@ -146,7 +146,7 @@ function Register() {
                 Please sign-in to access your account
               </p>
 
-              <form className="mb-4" action="#" method="POST">
+              <form className="mb-4" onSubmit={onSubmit}>
                 <div className="mb-4">
                   <div className="flex justify-between">
                     <label
@@ -314,7 +314,6 @@ function Register() {
                   <button
                     className="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-indigo-500 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                     type="submit"
-                    onClick={onSubmit}
                   >
                     Sign in
                   </button>
