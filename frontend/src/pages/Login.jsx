@@ -11,7 +11,7 @@ function Login() {
 
     try {
       const body = { email, password };
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(body),
