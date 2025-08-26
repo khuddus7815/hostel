@@ -48,7 +48,7 @@ const ComplaintForm = () => {
 
     try {
       const body = { name, description, room };
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=complaints", {
+      const response = await fetch("/api/complaints", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body),
@@ -206,7 +206,7 @@ const Complaint = () => {
 
   const getComplaints = async (e) => {
     try {
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=complaints", {
+      const response = await fetch("/api/complaints", {
         method: "GET",
         headers: headers,
       });

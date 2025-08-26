@@ -29,7 +29,7 @@ const WardenComplaints = () => {
 
   const getComplaints = async (e) => {
     try {
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=complaints", {
+      const response = await fetch("/api/complaints", {
         method: "GET",
         headers: headers,
       });
@@ -43,7 +43,7 @@ const WardenComplaints = () => {
 
   const handleApproval = async (id) => {
     try {
-      const response = await fetch(`[https://test.tranetra.com/api/index.php?endpoint=complaints&id=$](https://test.tranetra.com/api/index.php?endpoint=complaints&id=$){id}`, {
+      const response = await fetch(`/api/complaints/${id}`, {
         method: "POST",
         headers: headers,
       });
@@ -61,7 +61,7 @@ const WardenComplaints = () => {
 
   const deleteComplaint = async (id) => {
     try {
-      const response = await fetch(`[https://test.tranetra.com/api/index.php?endpoint=complaints&id=$](https://test.tranetra.com/api/index.php?endpoint=complaints&id=$){id}`, {
+      const response = await fetch(`/api/complaints/${id}`, {
         method: "DELETE",
         headers: headers,
       });
