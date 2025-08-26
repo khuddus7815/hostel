@@ -1,10 +1,10 @@
 <?php
 // index.php
 
-require_once 'db.php';
-require_once 'utils.php';
-require_once 'userController.php';
-require_once 'complaintController.php';
+require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/utils/utils.php';
+require_once __DIR__ . '/controller/userController.php';
+require_once __DIR__ . '/controller/complaintController.php';
 
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");

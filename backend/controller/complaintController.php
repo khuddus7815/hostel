@@ -1,8 +1,8 @@
 <?php
 // complaintController.php
 
-require_once 'db.php';
-require_once 'utils.php';
+require_once __DIR__ . '/../db.php';
+require_once __DIR__ . '/../utils/utils.php';
 
 function decodeUser($conn, $token) {
     $decodedToken = jwtDecoder($token);
@@ -52,7 +52,7 @@ function postComplaints($conn, $token, $data) {
     $is_completed = 0;
 
     $stmt = $conn->prepare("INSERT INTO complaint (name, block_id, student_id, description, room, is_completed, created_at, assigned_at) VALUES (?, ?, ?, ?, ?, ?, ?, NULL)");
-    $stmt->bind_param("siissi", $name, $block_id, $student_id, $description, $room, $is_completed, $created_at);
+    $stmt->bind_param("siissis", $name, $block_id, $student_id, $description, $room, $is_completed, $created_at);
     $stmt->execute();
     echo json_encode($stmt->insert_id);
 }
