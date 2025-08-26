@@ -17,7 +17,7 @@ function AccountPage() {
   useEffect(() => {
     const fetchUserType = async () => {
       try {
-        const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=userType", {
+        const response = await fetch("http://localhost:3000/userType", {
           method: "GET",
           headers: headers,
         });
@@ -40,7 +40,7 @@ function AccountPage() {
   const getuserDetails = async (user_id) => {
     try {
       const response = await fetch(
-        `[https://test.tranetra.com/api/index.php?endpoint=userDetails&id=$](https://test.tranetra.com/api/index.php?endpoint=userDetails&id=$){user_id}`,
+        `http://localhost:3000/userDetails/${user_id}`,
         {
           method: "GET",
           headers: headers,

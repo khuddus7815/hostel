@@ -38,7 +38,7 @@ function Register() {
           room,
         };
       }
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=register", {
+      const response = await fetch("http://localhost:3000/register", {
         method: "POST",
         headers: { "content-type": "application/json " },
         body: JSON.stringify(body),
