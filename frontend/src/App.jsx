@@ -22,6 +22,10 @@ const routes = createBrowserRouter([
     path: RoutesPathName.DASHBOARD_PAGE,
     element: <PrivateRoute />,
   },
+  {
+    path: '*',
+    element: <Login />,
+  }
 ]);
 
 function App() {
