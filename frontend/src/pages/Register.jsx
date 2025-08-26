@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { Roles } from "../constants";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
   const navigate = useNavigate()
@@ -38,9 +39,9 @@ function Register() {
           room,
         };
       }
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=register", {
+      const response = await fetch("/api/index.php?endpoint=register", {
         method: "POST",
-        headers: { "content-type": "application/json " },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
       console.log(response);

@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Complaint from "./Complaint";
 import WardenComplaints from "./WardenComplaint";
 import { GetAuthHeader } from "../testing/Headers";
+import { useEffect, useState } from "react";
 
 function Dashboard() {
   const [userType, setUserType] = useState(null);
@@ -12,7 +13,7 @@ function Dashboard() {
    
     const fetchUserType = async () => {
       try {
-        const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=userType", {
+        const response = await fetch("/api/index.php?endpoint=userType", {
           method: "GET",
           headers: GetAuthHeader(),
         });
