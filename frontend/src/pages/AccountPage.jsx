@@ -1,8 +1,7 @@
-import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
 import { useAuth } from "../utils/Auth";
 import { Link } from "react-router-dom";
-
+import Navbar from "./Navbar";
 function AccountPage() {
   const { headers } = useAuth();
   const [userName, setUserName] = useState("");
@@ -17,7 +16,7 @@ function AccountPage() {
   useEffect(() => {
     const fetchUserType = async () => {
       try {
-        const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=userType", {
+        const response = await fetch("/api/index.php?endpoint=userType", {
           method: "GET",
           headers: headers,
         });
@@ -40,7 +39,7 @@ function AccountPage() {
   const getuserDetails = async (user_id) => {
     try {
       const response = await fetch(
-        `[https://test.tranetra.com/api/index.php?endpoint=userDetails&id=$](https://test.tranetra.com/api/index.php?endpoint=userDetails&id=$){user_id}`,
+        `/api/index.php?endpoint=userDetails`,
         {
           method: "GET",
           headers: headers,
@@ -48,13 +47,13 @@ function AccountPage() {
       );
       const data = await response.json();
       console.log(data);
-      setUserName(data[0].full_name);
-      setemail(data[0].email);
-      setphone(data[0].phone);
-      setUsn(data[0].usn);
-      setRoom(data[0].room);
-      setblockID(data[0].block_id);
-      setblockname(data[0].block_name);
+      setUserName(data.full_name || "");
+      setemail(data.email || "");
+      setphone(data.phone || "");
+      setUsn(data.usn || "");
+      setRoom(data.room || "");
+      setblockID(data.block_id || "");
+      setblockname(data.block_name || "");
     } catch (err) {
       console.error(err.message);
     }
@@ -117,9 +116,9 @@ function AccountPage() {
           </>
         )}
       </ul>
-      <button class="mt-5 ml-5 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+      <button className="mt-5 ml-5 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
         <Link
-          class=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-blue-500 rounded-md group-hover:bg-opacity-0"
+          className=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-blue-500 rounded-md group-hover:bg-opacity-0"
           to="/"
         >
           Back

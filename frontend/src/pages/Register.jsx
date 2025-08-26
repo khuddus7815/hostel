@@ -38,9 +38,9 @@ function Register() {
           room,
         };
       }
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=register", {
+      const response = await fetch("/api/index.php?endpoint=register", {
         method: "POST",
-        headers: { "content-type": "application/json " },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
       console.log(response);
@@ -79,7 +79,7 @@ function Register() {
                   <rect x="0" y="0" width="100%" height="100%" fill="none" />
                   <path
                     d="M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5"
-                    stroke-width="1"
+                    strokeWidth="1"
                     stroke="none"
                     fill="currentColor"
                   />
@@ -111,7 +111,7 @@ function Register() {
                   <rect x="0" y="0" width="100%" height="100%" fill="none" />
                   <path
                     d="M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5"
-                    stroke-width="1"
+                    strokeWidth="1"
                     stroke="none"
                     fill="currentColor"
                   />

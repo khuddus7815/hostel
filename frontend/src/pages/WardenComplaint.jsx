@@ -29,7 +29,7 @@ const WardenComplaints = () => {
 
   const getComplaints = async (e) => {
     try {
-      const response = await fetch("https://test.tranetra.com/api/index.php?endpoint=complaints", {
+      const response = await fetch("/api/index.php?endpoint=complaints", {
         method: "GET",
         headers: headers,
       });
@@ -43,8 +43,8 @@ const WardenComplaints = () => {
 
   const handleApproval = async (id) => {
     try {
-      const response = await fetch(`[https://test.tranetra.com/api/index.php?endpoint=complaints&id=$](https://test.tranetra.com/api/index.php?endpoint=complaints&id=$){id}`, {
-        method: "POST",
+      const response = await fetch(`/api/index.php?endpoint=complaints&id=${id}`, {
+        method: "PUT",
         headers: headers,
       });
 
@@ -61,7 +61,7 @@ const WardenComplaints = () => {
 
   const deleteComplaint = async (id) => {
     try {
-      const response = await fetch(`[https://test.tranetra.com/api/index.php?endpoint=complaints&id=$](https://test.tranetra.com/api/index.php?endpoint=complaints&id=$){id}`, {
+      const response = await fetch(`/api/index.php?endpoint=complaints&id=${id}`, {
         method: "DELETE",
         headers: headers,
       });
@@ -88,7 +88,7 @@ const WardenComplaints = () => {
           <div className="container mx-auto grid gap-8 md:grid-cols-3 sm:grid-cols-1">
             {complaints.map((complaint) => (
               <div
-                key={complaint.complaint_id}
+                key={complaint.id}
                 className="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5"
               >
                 <div className="text-lg mb-2 font-semibold text-gray-900 hover:text-black sm:mb-1.5 sm:text-2xl">

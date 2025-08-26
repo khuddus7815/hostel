@@ -12,7 +12,7 @@ function Dashboard() {
    
     const fetchUserType = async () => {
       try {
-        const response = await fetch("http://localhost:3000/userType", {
+        const response = await fetch("/api/index.php?endpoint=userType", {
           method: "GET",
           headers: GetAuthHeader(),
         });
