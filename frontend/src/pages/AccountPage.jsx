@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../utils/Auth";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import Navbar from "./Navbar";
 
 function AccountPage() {
   const { headers } = useAuth();
