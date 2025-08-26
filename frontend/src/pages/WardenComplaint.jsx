@@ -49,7 +49,7 @@ const WardenComplaints = () => {
       });
 
       console.log(response);
-      window.location = "/";
+      await getComplaints();
     } catch (err) {
       console.error(err.message);
     }
@@ -67,7 +67,7 @@ const WardenComplaints = () => {
       });
 
       if (response.ok) {
-        setComplaints(complaints.filter((complaint) => complaint.id !== id));
+        await getComplaints();
       } else {
         console.error("Failed to delete complaint");
       }
